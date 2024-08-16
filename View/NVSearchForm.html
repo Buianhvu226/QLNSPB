@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tìm kiếm nhân viên</title>
+</head>
+<style>
+    .form_create_general{
+        display: flex;
+        justify-content: center;
+        margin: 10px 0pxs;
+    }
+
+    .form_title, .back, .form_general_details{
+        text-align: center;
+    }
+
+    .form_title{
+        font-weight: 700;
+        font-size: 25px;
+    }
+
+    .form_general_input input{
+        width: 200px;
+    }
+
+    .form_general_title {
+        margin-right: 20px;
+        font-size: 17px;
+    }
+</style>
+<body>
+    <form action="" method="post">
+        <div class="form_general">
+             <p class="form_title">Tìm kiếm thông tin nhân viên</p>
+             <div class="form_create_general">
+                <div class="form_general_title">
+                    <p class="form_title_ID">Trường nhập:</p>
+                    <p class="form_title_Name">Nhập thông tin tìm kiếm:</p>
+                 </div>
+                 <div class="form_general_input">
+                    <p><select id="comboBox" name="search_Key">
+                        <option value="IDNV">IDNV</option>
+                        <option value="Hoten">Hoten</option>
+                        <option value="IDPB">IDPB</option>
+                        <option value="Diachi">Diachi</option>
+                    </select></p>
+                    <p><input type="text" class="input_Name" name="search_Value" value=""></p>
+                 </div>
+             </div>
+             <div class="form_general_details">
+                <button class="ok" name="ok" >OK</button>
+             </div>
+             
+        </div>
+    </form>
+</body>
+
+</html>

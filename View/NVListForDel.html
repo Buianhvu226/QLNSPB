@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Danh sách nhân viên</title>
+</head>
+<body>
+    <h2>Danh sách nhân viên:</h2>
+    <?php
+
+    $i = 0;
+    foreach($NVList as $NV){
+        echo "<p>" . ($i++) . ". <a href='?mod5=1&&IDNV=" . $NV->getIDNV() . "'>" . $NV->getHoten() . "</a></p>";
+    }
+    ?>
+    <br>
+    
+</body>
+</html>

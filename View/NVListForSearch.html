@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Dữ liệu tìm thấy:</h2>
+    <?php
+    for ($i = 0; $i < count($NV_Search); $i++) {
+        echo "<p><b>" . $NV_Search[$i]['IDNV'] . ". " . $NV_Search[$i]['Hoten'] . "</b></p>";
+        echo "<p>Hoten: " . $NV_Search[$i]['Hoten'] . "</p>";
+        echo "<p>IDPB: " . $NV_Search[$i]['IDPB'] . ".</p>";
+        echo "<p>Diachi: " . $NV_Search[$i]['Diachi'] . ".</p><br>";
+    }
+    ?>
+</body>
+</html>

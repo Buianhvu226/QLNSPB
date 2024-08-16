@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Thêm nhân viên</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            color: #555;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <form action="" method="post">
+        <h2>Thêm nhân viên mới:</h2>
+
+        <label for="IDNV">ID nhân viên:</label>
+        <input type="text" name="IDNV" required>
+
+        <label for="Hoten">Họ tên:</label>
+        <input type="text" name="Hoten" required>
+
+        <label for="IDPB">ID phòng ban:</label>
+        <?php
+            echo '<p><select class="input_Office" name="input_Office">';
+                foreach ($officeID as $IDPB) {
+                    $selected = ($IDPB == $input_Office) ? 'selected' : '';
+                    echo "<option value='$IDPB' $selected>$IDPB</option>";
+                }
+            echo '</select></p>';
+        ?>
+
+        <label for="Diachi">Địa chỉ:</label>
+        <textarea name="Diachi" rows="4" required></textarea>
+
+        <button type="submit" name="ok">Thêm Nhân Viên</button>
+    </form>
+</body>
+</html>

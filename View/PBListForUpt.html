@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Danh sách phòng ban</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        table {
+            width: 80%;
+            margin: 20px auto;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        th, td:last-child {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h2>Danh sách phòng ban:</h2>
+    <?php
+    if (isset($pbList)) {
+        echo "<table>";
+        echo "<tr>
+        <th>ID</th>
+        <th>Tên phòng ban</th>
+        <th>Mô tả</th>
+        <th>Cập nhật phòng ban</th>
+        </tr>";
+        for ($i = 0; $i < sizeof($pbList); $i++) {
+            echo "<tr>";
+            echo "<td>" . $pbList[$i]->getIDPB() . "</td>";
+            echo "<td>" . $pbList[$i]->getTenpb() . "</td>";
+            echo "<td>" . $pbList[$i]->getMota() . "</td>";
+            echo "<td><a href='?mod4=1&&IDPB=" . $pbList[$i]->getIDPB() . "'>Cập nhật</a></td>";
+
+            echo "</tr>";
+        }
+        echo "</table>";
+    } else {
+        echo "<p>Không có dữ liệu nào.</p>";
+    }
+    ?>
+    <br>
+    
+</body>
+</html>
